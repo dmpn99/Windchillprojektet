@@ -13,7 +13,7 @@ class Program
         
         double userWindSpeedKmh = userWindSpeedMs * 3.6;
         
-        double wct = 13.12 + 0.6215 * userTemp - 11.37 * userWindSpeedKmh^0.16 + 0.3965 * userTemp * userWindSpeedKmh^0.16;
+        double wct = 13.12 + 0.6215 * userTemp - 11.37 * Math.Pow(userWindSpeedKmh, 0.16) + 0.3965 * userTemp * Math.Pow(userWindSpeedKmh, 0.16);
         
         Console.Write(wct);
         
