@@ -11,8 +11,8 @@ class Program
         {
             
             Console.WriteLine("\nHej och välkommen till Windchillkalkylatorn!");
-            Console.WriteLine("\n1. Vill du beräkna windchill-faktor?");
-            Console.WriteLine("2. Avsluta");
+            Console.WriteLine("\n1. Beräkna windchill-faktor.");
+            Console.WriteLine("2. Avsluta.");
             // Ändra så att man kan skriva in en bokstav.
             int userChoice = int.Parse(Console.ReadLine());
 
@@ -31,15 +31,47 @@ class Program
 
                     double wct = 13.12 + 0.6215 * userTemp - 11.37 * Math.Pow(userWindSpeedKmh, 0.16) +
                                  0.3965 * userTemp * Math.Pow(userWindSpeedKmh, 0.16);
+                        
+                    
+                        // Gjorde ett försök att lägga in en if-sats. 
+                        if (wct > -25)
+                        {
 
-                    
-                    Console.Write("\n" + wct.ToString("0.0"));
-                    Thread.Sleep(1750);
-                    Console.WriteLine();
-                    
-                    break;
-                
-                case 2:
+                            Console.WriteLine("\n" + wct.ToString("0.0"));
+                            Console.WriteLine(" Kallt");
+                            Thread.Sleep(1750);
+                            break;
+                        
+                        }
+                        // Tror att det finns risk att värdet blir exakt -35
+                        else if (wct <= -25 && wct >= -35)
+                        {
+                            Console.WriteLine("\n" + wct.ToString("0.0"));
+                            Console.WriteLine("Mycket kallt");
+                            Thread.Sleep(1750);
+                            break;
+                        }
+                        // Tror att det finns risk att värdet blir exakt -35
+                        else if (wct <= -35 && wct >= -60)
+                        {
+                            Console.WriteLine("\n" + wct.ToString("0.0"));
+                            Console.WriteLine("Risk för frostskada.");
+                            Thread.Sleep(1750);
+                            break;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("\n" + wct.ToString("0.0"));
+                            Console.WriteLine("Stor risk för frostskada.");
+                            Thread.Sleep(1750);
+                            break;
+                        }
+                            
+
+
+                            
+                case 2: 
                     
                     Console.Clear();
                     Console.WriteLine("\nDu valde att avsluta.");
