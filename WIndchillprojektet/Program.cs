@@ -13,12 +13,12 @@ class Program
             Console.WriteLine("\n1. Beräkna windchill-faktor.");
             Console.WriteLine("2. Avsluta.");
             // Ändra så att man kan skriva in en bokstav.
-            int userChoice = int.Parse(Console.ReadLine());
+            string userChoice = (Console.ReadLine());
 
 
             switch (userChoice)
             {
-                case 1:                   
+                case "1":                   
                         Console.Clear();
                         Console.Write("Skriv in temperaturen i grader Celsius: ");
                         double userTemp = double.Parse(Console.ReadLine());
@@ -66,7 +66,7 @@ class Program
                             Thread.Sleep(1750);
                             break;
                         }                                                     
-                case 2:                   
+                case "2":                   
                         Console.Clear();
                         Console.WriteLine("\nDu valde att avsluta.");
                         Thread.Sleep(1500);
