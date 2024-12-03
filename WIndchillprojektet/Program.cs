@@ -42,7 +42,7 @@ class Program
                             break;
 
                         }
-                        // Tror att det finns risk att värdet blir exakt -35
+                        // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
                         else if (wct <= -25 && wct >= -35)
                         {
                             Console.WriteLine("\n" + wct.ToString("0.0"));
@@ -50,7 +50,7 @@ class Program
                             Thread.Sleep(1750);
                             break;
                         }
-                        // Tror att det finns risk att värdet blir exakt -35
+                        // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
                         else if (wct <= -35 && wct >= -60)
                         {
                             Console.WriteLine("\n" + wct.ToString("0.0"));
