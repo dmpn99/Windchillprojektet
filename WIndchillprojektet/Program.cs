@@ -51,7 +51,7 @@ class Program
                             break;
                         }
                         // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
-                        else if (wct <= -35 && wct >= -60)
+                        else if (wct < -35 && wct >= -60)
                         {
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Risk för frostskada.");
