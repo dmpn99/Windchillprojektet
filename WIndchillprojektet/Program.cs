@@ -69,7 +69,7 @@ class Program
                 case "2":                   
                         Console.Clear();
                         Console.WriteLine("\nDu valde att avsluta.");
-                        Thread.Sleep(1500);
+                        Thread.Sleep(1750);
                         isRunning = false;
                         break;                   
                 default:                      
