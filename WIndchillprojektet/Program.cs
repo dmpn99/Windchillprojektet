@@ -12,7 +12,7 @@ class Program
             Console.WriteLine("\nHej och välkommen till Windchillkalkylatorn!");
             Console.WriteLine("\n1. Beräkna windchill-faktor.");
             Console.WriteLine("2. Avsluta.");
-            // Ändra så att man kan skriva in en bokstav.
+            // Använder en string för att hantera fel ifall användaren 
             string userChoice = (Console.ReadLine());
 
 
@@ -25,7 +25,8 @@ class Program
 
                         Console.Write("Skriv vindhastigheten i m/s: ");
                         double userWindSpeedMs = double.Parse(Console.ReadLine());
-
+                        
+                        // Omvandlar m/s till km/h och tilldelar den variabeln userWindSpeedKmh.
                         double userWindSpeedKmh = userWindSpeedMs * 3.6;
 
                         double wct = 13.12 + 0.6215 * userTemp - 11.37 * Math.Pow(userWindSpeedKmh, 0.16) +
