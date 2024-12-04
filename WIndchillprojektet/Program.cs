@@ -4,18 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        /*
+         Vi har menyn i en while-loop för att kunna använda kalkylatorn obegränsat med gånger.
+         Så länge användaren inte trycker Avsluta så fortsätter programmet.
+         Vi börjar med att deklarera en bool "isRunning" (true) som blir villkor till while-loopen.
+         */
         bool isRunning = true;
-
         while (isRunning)
         {            
             Console.WriteLine("\nHej och välkommen till Windchillkalkylatorn!");
             Console.WriteLine("\n1. Beräkna windchill-faktor.");
             Console.WriteLine("2. Avsluta.");
-            // Använder en string för att hantera fel ifall användaren 
+            // Vi spar input från användaren i variabeln "userChoice"
             string userChoice = (Console.ReadLine());
 
-
+            // Använder switch-satsen för att selektera menyvalen.
             switch (userChoice)
             {
                 case "1":                   
@@ -33,41 +36,40 @@ class Program
                                      0.3965 * userTemp * Math.Pow(userWindSpeedKmh, 0.16);
 
 
-                        // Gjorde ett försök att lägga in en if-sats. 
+                        
                         if (wct > -25)
-                        {
-                            Console.Clear;
+                        {                              
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Kallt");
                             Thread.Sleep(1750);
+                            Console.Clear();
                             break;
-
                         }
-                        // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
+                        
                         else if (wct <= -25 && wct >= -35)
-                        {
-                           
+                        {                         
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Mycket kallt");
                             Thread.Sleep(1750);
+                            Console.Clear();
                             break;
                         }
-                        // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
+                        
                         else if (wct < -35 && wct >= -60)
-                        {
-                            
+                        {                            
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Risk för frostskada.");
                             Thread.Sleep(1750);
+                            Console.Clear();
                             break;
                         }
 
                         else
                         {
-                            
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Stor risk för frostskada.");
                             Thread.Sleep(1750);
+                            Console.Clear();
                             break;
                         }                                                     
                 case "2":                   
@@ -77,7 +79,7 @@ class Program
                         isRunning = false;
                         break;                   
                 default:                      
-                        Console.WriteLine("\nVänligen tryck alternativ 1-2");
+                        Console.WriteLine("\nFel! Välj alternativ 1 eller 2");
                         Thread.Sleep(1500);
                         Console.Clear();
                         break;
