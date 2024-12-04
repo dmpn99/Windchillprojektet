@@ -36,7 +36,7 @@ class Program
                         // Gjorde ett försök att lägga in en if-sats. 
                         if (wct > -25)
                         {
-
+                            Console.Clear;
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Kallt");
                             Thread.Sleep(1750);
@@ -46,6 +46,7 @@ class Program
                         // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
                         else if (wct <= -25 && wct >= -35)
                         {
+                           
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Mycket kallt");
                             Thread.Sleep(1750);
@@ -54,6 +55,7 @@ class Program
                         // Tror att det finns risk att problem uppstår ifall värdet blir exakt -35
                         else if (wct < -35 && wct >= -60)
                         {
+                            
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Risk för frostskada.");
                             Thread.Sleep(1750);
@@ -62,6 +64,7 @@ class Program
 
                         else
                         {
+                            
                             Console.WriteLine("\n" + wct.ToString("0.0"));
                             Console.WriteLine("Stor risk för frostskada.");
                             Thread.Sleep(1750);
